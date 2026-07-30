@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SearchAura - Find Your US University</title>
+
+  <!-- Google Fonts - makes text look nice -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Our CSS file - all the styles/design -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  // NAVIGATION BAR
+  <nav>
+    <!-- Logo on the left -->
+    <div class="logo">Search<span>Aura</span></div>
+
+    <!-- Links on the right -->
+    <div class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#universities">Universities</a>
+      <a href="#how-it-works">How It Works</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+   <!--  HOME / HERO SECTION -->
+  <section id="home">
+
+    <h1>Find Your Dream<br /><span>US University</span></h1>
+    <p class="hero-sub">Search universities by name, state, or course — made for Nepali students 🇳🇵</p>
+
+    <!-- SEARCH BAR -->
+    <div class="search-box">
+
+      <!-- Input 1: Name -->
+      <div class="search-field">
+        <label for="search-name">University Name</label>
+        <input
+          type="text"
+          id="search-name"
+          placeholder="e.g. Arizona State..."
+        />
+      </div>
+
+      <!-- Input 2: State -->
+      <div class="search-field">
+        <label for="search-state">State</label>
+        <select id="search-state">
+          <option value="">All States</option>
+          <option value="Arizona">Arizona</option>
+          <option value="Texas">Texas</option>
+          <option value="Illinois">Illinois</option>
+          <option value="California">California</option>
+        </select>
+      </div>
+
+      <!-- Input 3: Course -->
+      <div class="search-field">
+        <label for="search-course">Course</label>
+        <select id="search-course">
+          <option value="">All Courses</option>
+          <option value="Computer Science">Computer Science</option>
+          <option value="Business">Business</option>
+          <option value="Engineering">Engineering</option>
+          <option value="Data Science">Data Science</option>
+          <option value="Medicine">Medicine</option>
+        </select>
+      </div>
+
+      <!-- Search Button -->
+      <button id="search-btn">🔍 Search</button>
+
+    </div>
+
+    <!-- Message shown when no results found (hidden at start) -->
+    <p id="no-result" class="no-result-msg">
+       No universities found. Try different filters.
+    </p>
+
+  </section>
+  <!--  UNIVERSITIES SECTION -->
+  
+  <section id="universities">
+
+    <p class="section-tag">Explore</p>
+    <h2>Top Universities for Nepali Students</h2>
+    <p class="section-sub">Real campus photos · Courses · Fees</p>
+
+    <!-- University cards go here — script.js fills this automatically -->
+    <div id="uni-grid">
+      <!-- Cards appear here -->
+    </div>
+
+  </section>
+  <!--  HOW IT WORKS SECTION -->
+  <section id="how-it-works">
+
+    <p class="section-tag">Simple Steps</p>
+    <h2>How It Works</h2>
+    <p class="section-sub">Follow these 4 steps to get started</p>
+
+    <div id="steps-grid">
+
+      <div class="step">
+        <div class="step-icon">🔍</div>
+        <h3>01 — Search</h3>
+        <p>Search universities by name, state, or course</p>
+      </div>
+
+      <div class="step">
+        <div class="step-icon">📊</div>
+        <h3>02 — Compare</h3>
+        <p>Compare fees, locations and courses</p>
+      </div>
+
+      <div class="step">
+        <div class="step-icon">📞</div>
+        <h3>03 — Connect</h3>
+        <p>Talk to our team for FREE guidance</p>
+      </div>
+
+      <div class="step">
+        <div class="step-icon">✈️</div>
+        <h3>04 — Apply</h3>
+        <p>We help you apply and get your student VISA</p>
+      </div>
+
+    </div>
+  </section>
+  <!--  CONTACT / FORM SECTION -->
+  
+  <section id="contact">
+
+    <p class="section-tag">Get Help</p>
+    <h2>Book a Free Consultation</h2>
+    <p class="section-sub">Fill the form below — we reply within 24 hours</p>
+
+    <form id="contact-form">
+
+      <!-- Full Name -->
+      <div class="form-field">
+        <label for="c-name">Full Name</label>
+        <input type="text" id="c-name" placeholder="Your full name" />
+      </div>
+
+      <!-- Email -->
+      <div class="form-field">
+        <label for="c-email">Email Address</label>
+        <input type="email" id="c-email" placeholder="your@email.com" />
+      </div>
+
+      <!-- Phone -->
+      <div class="form-field">
+        <label for="c-phone">Phone Number</label>
+        <input type="text" id="c-phone" placeholder="+977 98XXXXXXXX" />
+      </div>
+
+      <!-- Interested University -->
+      <div class="form-field">
+        <label for="c-uni">University You Are Interested In</label>
+        <select id="c-uni">
+          <option value="">Select a university</option>
+          <option>Arizona State University</option>
+          <option>University of Texas at Arlington</option>
+          <option>University of Illinois Chicago</option>
+          <option>University of North Texas</option>
+          <option>Not sure yet</option>
+        </select>
+      </div>
+
+      <!-- Message -->
+      <div class="form-field">
+        <label for="c-msg">Your Message</label>
+        <textarea id="c-msg" rows="4" placeholder="Tell us about yourself and what you want to study..."></textarea>
+      </div>
+
+      <!-- Submit Button -->
+      <button type="submit">📩 Send Message</button>
+
+      <!-- Success message (hidden at start, shown by script.js) -->
+      <p id="form-success">
+        ✅ Message sent! Our team will contact you within 24 hours.
+      </p>
+
+    </form>
+
+  </section> 
+  <!-- FOOTER -->
+
+  <footer>
+    <p class="copy">© 2026 SearchAura. Made with HTML, CSS & JavaScript.</p>
+  </footer>
+
+
+  <!-- Our JavaScript file — always at the BOTTOM of body -->
+  <script src="script.js"></script>
+
+</body>
+</html>

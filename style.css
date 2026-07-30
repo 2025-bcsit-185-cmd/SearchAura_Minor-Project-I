@@ -1,0 +1,585 @@
+/* 
+   SECTIONS:
+   1. Colors (variables)
+   2. Base / Reset
+   3. Navbar
+   4. Home / Hero
+   5. Search Bar
+   6. Universities Section
+   7. University Card
+   8. How It Works
+   9. Contact Form
+   10. Footer
+   11. Mobile (small screens)
+*/
+
+/* COLORS */
+  
+:root {
+  --red:       #c0392b;   /* main red color          */
+  --red-dark:  #a93226;   /* darker red (hover)      */
+  --gold:      #f39c12;   /* gold/orange color       */
+  --dark:      #111111;   /* very dark (navbar/footer) */
+  --white:     #ffffff;
+  --light-bg:  #e4ecff;   /* light grey page bg      */
+  --card-bg:   #ffffff;   /* white card background   */
+  --text:      #222222;   /* main text color         */
+  --text-gray: #949494;   /* lighter grey text       */
+  --border:    #c1c1c1;   /* border / divider color  */
+  --green:     #27ae60;   /* success green color     */
+}
+
+
+/* BASE / RESET */
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;  /* makes sizing easier */
+}
+
+html {
+  scroll-behavior: smooth; /* smooth scrolling when clicking nav links */
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--light-bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+/* Shared button style — all buttons look the same */
+button {
+  background-color: var(--red);
+  color: var(--white);
+  border: none;
+  border-radius: 8px;
+  padding: 13px 28px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;  /* shows hand icon when hovering */
+  transition: background-color 0.2s, transform 0.15s;
+}
+
+button:hover {
+  background-color: var(--red-dark);
+  transform: translateY(-2px);  /* tiny lift effect */
+}
+
+/* Shared section tag (small label above headings) */
+.section-tag {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--red);
+  margin-bottom: 8px;
+}
+
+/* Shared heading style */
+h2 {
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+
+/* Shared subtitle below headings */
+.section-sub {
+  font-size: 15px;
+  color: var(--text-gray);
+  margin-bottom: 36px;
+}
+
+/* NAVBAR*/
+
+nav {
+  position: sticky;   /* stays at top when you scroll */
+  top: 0;
+  z-index: 999;       /* sits above everything else */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+  height: 64px;
+  background-color: var(--dark);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* Logo text */
+.logo {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--white);
+}
+
+/* "Aura" in gold */
+.logo span {
+  color: var(--gold);
+}
+
+/* Nav links wrapper */
+.nav-links {
+  display: flex;
+  gap: 28px;
+}
+
+/* Each link */
+.nav-links a {
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover {
+  color: var(--gold);
+}
+
+/* HOME / HERO SECTION */
+
+#home {
+  background: rgb(10, 10, 38);
+  padding: 100px 20px 70px;
+  text-align: center;
+}
+
+/* Main big heading */
+#home h1 {
+  font-size: 50px;       /* ← make bigger/smaller here */
+  font-weight: 800;
+  color: var(--white);
+  line-height: 1.15;
+  margin-bottom: 16px;
+}
+
+/* "US University" in gold inside the heading */
+#home h1 span {
+  color: var(--gold);
+}
+
+/* Subtitle below heading */
+.hero-sub {
+  font-size: 17px;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 36px;
+}
+
+/* Message shown when no search results */
+.no-result-msg {
+  display: none;          /* hidden at start */
+  margin-top: 16px;
+  color: #ffcccc;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+/* SEARCH BAR */
+
+.search-box {
+  background-color: var(--white);
+  border-radius: 16px;
+  padding: 28px;
+  max-width: 640px;
+  margin: 0 auto;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+  text-align: left;
+}
+
+/* Each label + input pair */
+.search-field {
+  display: flex;
+  flex-direction: column;  /* label on top, input below */
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+/* Label text */
+.search-field label {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-gray);
+}
+
+/* Input and dropdown */
+.search-field input,
+.search-field select {
+  padding: 11px 14px;
+  border: 1.5px solid var(--border);
+  border-radius: 8px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  color: var(--text);
+  background-color: #fafafa;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+/* Glow effect when clicked */
+.search-field input:focus,
+.search-field select:focus {
+  border-color: var(--red);
+  box-shadow: 0 0 0 3px rgba(192, 57, 43, 0.12);
+}
+
+/* Search button — full width inside search box */
+#search-btn {
+  width: 100%;
+  margin-top: 4px;
+  font-size: 16px;
+  padding: 14px;
+}
+
+/* UNIVERSITIES SECTION */
+
+#universities {
+  padding: 80px 20px;
+  text-align: center;
+  background-color: var(--light-bg);
+}
+
+/* The grid that holds all university cards */
+#uni-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);  /* 2 cards per row */
+  gap: 28px;
+  max-width: 1060px;
+  margin: 0 auto;
+}
+
+/* UNIVERSITY CARD */
+
+.uni-card {
+  background-color: var(--card-bg);
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  overflow: hidden;       /* keeps photo inside rounded corners */
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
+  text-align: left;
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+
+/* Card lifts when hovered */
+.uni-card:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.13);
+}
+
+/* --- Photo at top of card --- */
+.uni-photo {
+  width: 100%;
+  height: 210px;           /* ← change photo height here */
+  object-fit: cover;       /* crops photo to fill the box */
+  display: block;
+  transition: transform 0.4s;
+}
+
+/* Photo zooms in slightly when card is hovered */
+.uni-card:hover .uni-photo {
+  transform: scale(1.05);
+}
+
+/* Photo wrapper (needed for overflow hidden on zoom) */
+.photo-wrapper {
+  overflow: hidden;
+  position: relative;      /* for the badge position */
+}
+
+/* State badge over the photo */
+.state-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  color: var(--white);
+  font-size: 11px;
+  font-weight: 700;
+  padding: 5px 12px;
+  border-radius: 100px;   /* pill shape */
+}
+
+/* --- Text area below photo --- */
+.uni-info {
+  padding: 20px;
+}
+
+/* University name */
+.uni-info h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 6px;
+}
+
+/* Location */
+.uni-location {
+  font-size: 13px;
+  color: var(--text-gray);
+  margin-bottom: 4px;
+}
+
+/* Fee */
+.uni-fee {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--red);
+  margin-bottom: 14px;
+}
+
+/* Divider line */
+.uni-divider {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin-bottom: 14px;
+}
+
+/* "Available Courses" small heading */
+.courses-label {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-gray);
+  margin-bottom: 10px;
+}
+
+/* List of courses */
+.courses-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+/* Each course item */
+.courses-list li {
+  font-size: 13px;
+  color: var(--text);
+  padding: 7px 12px;
+  background-color: #f8f8f8;
+  border-radius: 6px;
+  border-left: 3px solid var(--red);   /* red stripe on left */
+}
+
+/* Row of small badge tags */
+.tag-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+/* Each badge (Public, Est. 1885, etc.) */
+.tag {
+  font-size: 11px;
+  font-weight: 600;
+  background-color: #eeeeee;
+  color: var(--text-gray);
+  padding: 4px 10px;
+  border-radius: 100px;
+}
+
+/* Visit Website button inside card */
+.visit-btn {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  padding: 11px;
+  background-color: var(--red);
+  color: var(--white);
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: background-color 0.2s, transform 0.15s;
+}
+
+.visit-btn:hover {
+  background-color: var(--red-dark);
+  transform: translateY(-2px);
+}
+
+/* HOW IT WORKS SECTION */
+
+#how-it-works {
+  padding: 80px 20px;
+  text-align: center;
+  background-color: #d5eaff;    /* warm light background */
+}
+
+/* Grid of 4 step cards */
+#steps-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);   /* 4 columns */
+  gap: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+/* Each step card */
+.step {
+  background-color: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 28px 18px;
+  transition: transform 0.2s;
+}
+
+.step:hover {
+  transform: translateY(-5px);
+}
+
+/* Big emoji icon */
+.step-icon {
+  font-size: 36px;
+  margin-bottom: 12px;
+}
+
+.step h3 {
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: var(--red);
+}
+
+.step p {
+  font-size: 13px;
+  color: var(--text-gray);
+}
+
+/* CONTACT FORM SECTION */
+
+#contact {
+  padding: 80px 20px;
+  text-align: center;
+  background-color: var(--light-bg);
+}
+
+/* The form itself */
+#contact-form {
+  max-width: 520px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+/* Each label + input pair in the form */
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.form-field label {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-gray);
+}
+
+/* Inputs, dropdowns and textarea in the form */
+.form-field input,
+.form-field select,
+.form-field textarea {
+  padding: 12px 14px;
+  border: 1.5px solid var(--border);
+  border-radius: 8px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  color: var(--text);
+  background-color: var(--white);
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus {
+  border-color: var(--red);
+  box-shadow: 0 0 0 3px rgba(192, 57, 43, 0.1);
+}
+
+/* Textarea can be resized by user vertically */
+.form-field textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+/* Submit button — full width */
+#contact-form button {
+  width: 100%;
+  margin-top: 4px;
+  font-size: 16px;
+  padding: 14px;
+}
+
+/* Success message (hidden at start, shown by script.js) */
+#form-success {
+  display: none;           /* hidden */
+  margin-top: 16px;
+  padding: 14px;
+  background-color: #eafaf1;
+  border: 1px solid #a9dfbf;
+  border-radius: 8px;
+  color: var(--green);
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* FOOTER */
+
+footer {
+  background-color: var(--dark);
+  padding: 40px 20px;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+footer .logo {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--white);
+  margin-bottom: 10px;
+}
+
+footer p {
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.copy {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.25);
+  margin-top: 16px;
+}
+
+/* MOBILE — for screens smaller than 650px */
+@media (max-width: 650px) {
+
+  /* Smaller hero heading */
+  #home h1 { font-size: 32px; }
+
+  /* Stack cards: 1 per row */
+  #uni-grid { grid-template-columns: 1fr; }
+
+  /* Stack steps: 2 per row */
+  #steps-grid { grid-template-columns: 1fr 1fr; }
+
+  /* Less padding on all sections */
+  #home, #universities, #how-it-works, #contact {
+    padding: 60px 16px;
+  }
+
+  /* Smaller nav padding */
+  nav { padding: 0 16px; }
+
+  /* Hide nav links on very small screens */
+  .nav-links { display: none; }
+}
