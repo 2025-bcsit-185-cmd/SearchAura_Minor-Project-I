@@ -139,17 +139,6 @@ document.getElementById("contact-form").addEventListener("submit", function (e) 
   var uni   = document.getElementById("c-uni").value;
   var msg   = document.getElementById("c-msg").value.trim();
 
-  // Check all fields are filled
-  if (!name || !email || !phone || !uni || !msg) {
-    alert("⚠️ Please fill in all fields.");
-    return;
-  }
-
-  // Check email has @ and .
-  if (!email.includes("@") || !email.includes(".")) {
-    alert("⚠️ Please enter a valid email. Example: name@gmail.com");
-    return;
-  }
 
   // Show success message and clear the form
   document.getElementById("form-success").style.display = "block";
