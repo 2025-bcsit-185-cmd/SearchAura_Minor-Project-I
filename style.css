@@ -118,7 +118,7 @@ nav {
 
 /* "Aura" in gold */
 .logo span {
-  color: var(--gold);
+  color: var(--light-blue);
 }
 
 /* Nav links wrapper */
@@ -159,7 +159,7 @@ nav {
 
 /* "US University" in gold inside the heading */
 #home h1 span {
-  color: var(--gold);
+  color: var(--light-blue);
 }
 
 /* Subtitle below heading */
